@@ -10,8 +10,6 @@ router.get('/', function(req, res) {
   res.send('Router de usuario');
 });
 
-app.post('/login', usuario.login);
-app.get('/menu', mw.isLogged, usuario.getMenu);
-
+router.post('/login', usuario.login)
 
 module.exports = router;

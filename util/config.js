@@ -85,7 +85,7 @@ var config = {
 		}
 	},
 	development: {
-		port    : 3000,
+		port    : 4000,
 		env     : environment,
 		dev     : true,
 		secret  : 'selfservice2',

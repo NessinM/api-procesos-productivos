@@ -3,7 +3,7 @@ var api = {
 		usuario : require('./api_usuario')
 	},
 	ws : {},
-	sap : {}
+	sap: {}
 }
 
 module.exports = api

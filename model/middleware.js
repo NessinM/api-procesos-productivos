@@ -10,7 +10,7 @@ var isLogged = function(req, res, next){
   jwt.verify(token, config.secret, function(err, decoded) {
     var response = {
       status: -1,
-      message: 'No ha ingresado al sistema'
+      message: 'No ha ingresado al aplicativo'
     }
     
     if (err) {

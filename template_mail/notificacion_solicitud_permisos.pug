@@ -1,0 +1,38 @@
+extends ./layout
+
+block body
+	h2 Notificación Solicitud de Permiso
+	hr(style="height: 0;-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;margin-top: 20px;margin-bottom: 20px;border: 0;border-top: 1px solid #b80813;width:50%")
+	h3 #{obj.texto}
+
+	form(style="")
+
+		div(style="max-width:500px;text-align:center;margin-bottom:20px;")
+			div(style="width:50%;display:inline-block;font-weight:bold;") Número de solicitud
+			div(style="width:50%;display:inline-block")= obj.id
+
+		div(style="max-width:500px;text-align:center;margin-bottom:20px;")
+			div(style="width:50%;display:inline-block;font-weight:bold;") Tipo
+			div(style="width:50%;display:inline-block")= obj.descripcionTipo
+	
+		if obj.motivo
+			div(style="max-width:500px;text-align:center;margin-bottom:20px;")
+				div(style="width:50%;display:inline-block;font-weight:bold;") Motivo
+				div(style="width:50%;display:inline-block")= obj.motivo
+		
+		br
+		br
+
+		table
+			thead
+				th Desde
+				th Hasta
+				th Hora Desde
+				th Hora Hasta
+			tbody
+			each d in obj.detalle
+				tr(style="text-align:center")
+					td(style="padding: 10px")= d.desde
+					td(style="padding: 10px")= d.hasta
+					td(style="padding: 10px")= d.horaDesde
+					td(style="padding: 10px")= d.horaHasta

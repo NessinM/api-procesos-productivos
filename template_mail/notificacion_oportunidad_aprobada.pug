@@ -1,0 +1,32 @@
+extends ./layout
+
+block body
+	h2(style="font-size: 16px") #{obj.nombre} ha aprobado la oportunidad #{obj.idOportunidad}
+	hr(style=`height: 0;-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;margin-top: 10px;margin-bottom: 10px;border: 0;border-top: 1px solid ${obj.color};width:35%`)
+	//- h3(style=`font-size: 14px;color: rgb(255, 255, 255);background-color: ${obj.color};font-weight: 600;padding: 10px;max-width: 439px;border-radius: 38px;`) Por favor ingresar el numero #{obj.idOportunidad} para la integración
+	
+	form(style=`background: #fff;padding: 25px; border-radius: 6px;width: 500px;border: 2px solid  ${obj.color};`)
+		div(style="width:35%;display:inline-block;font-weight:bold;vertical-align: top; padding-bottom: 9px;text-align: initial;") Oportunidad
+		div(style="width:35%;display:inline-block")
+			span(style="display:block;font-size: 12px;text-align: initial;text-transform: uppercase;")= obj.idOportunidad
+		div(style="width:35%;display:inline-block;font-weight:bold;vertitext-transform: uppercase;cal-align: top; padding-bottom: 9px;text-align: initial") Fecha Registro
+		div(style="width:35%;display:inline-block")
+			span(style="display:block;font-size: 12px;text-align: initial;text-transform: uppercase;")= obj.fechaRegistroCompleta
+		div(style="width:35%;display:inline-block;font-weight:bold;vertitext-transform: uppercase;cal-align: top; padding-bottom: 9px;text-align: initial") Vendedor
+		div(style="width:35%;display:inline-block")
+			span(style="display:block;font-size: 12px;text-align: initial;text-transform: uppercase;")= `${obj.codigoVendedor}  ${obj.nombreVendedor}`
+		div(style="width:35%;display:inline-block;font-weight:bold;vertitext-transform: uppercase;cal-align: top; padding-bottom: 9px;text-align: initial") RUC / DNI
+		div(style="width:35%;display:inline-block")
+			span(style="display:block;font-size: 12px;text-align: initial;text-transform: uppercase;")= obj.documento
+		div(style="width:35%;display:inline-block;font-weight:bold;vertitext-transform: uppercase;cal-align: top; padding-bottom: 9px;text-align: initial") Cliente
+		div(style="width:35%;display:inline-block")
+			span(style="display:block;font-size: 12px;text-align: initial;text-transform: uppercase;")= obj.nombreCliente
+		div(style="width:35%;display:inline-block;font-weight:bold;vertitext-transform: uppercase;cal-align: top; padding-bottom: 9px;text-align: initial") Tipo Producto
+		div(style="width:35%;display:inline-block")
+			span(style="display:block;font-size: 12px;text-align: initial;text-transform: uppercase;")= `(${obj.tipoProducto})  ${obj.descripcionTipoProducto}`
+		div(style="width:35%;display:inline-block;font-weight:bold;vertitext-transform: uppercase;cal-align: top; padding-bottom: 9px;text-align: initial") Aprobado Por
+		div(style="width:35%;display:inline-block")
+			span(style="display:block;font-size: 12px;text-align: initial;text-transform: uppercase;")= obj.nombre
+		div(style="width:35%;display:inline-block;font-weight:bold;vertitext-transform: uppercase;cal-align: top; padding-bottom: 9px;text-align: initial") Licitación
+		div(style="width:35%;display:inline-block")
+			span(style="display:block;font-size: 12px;text-align: initial;text-transform: uppercase;")= obj.licitacion

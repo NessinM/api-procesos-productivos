@@ -1,0 +1,40 @@
+extends ./layout
+
+block body
+	h2(style="font-size: 16px") Se ha generado una nueva oportunidad en frio
+	hr(style=`height: 0;-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;margin-top: 10px;margin-bottom: 10px;border: 0;border-top: 1px solid ${obj.color};width:35%`)
+	h3(style=`font-size: 14px;color: rgb(255, 255, 255);background-color: ${obj.color};font-weight: 600;padding: 10px;max-width: 439px;border-radius: 38px;`) Por favor ingresar el numero #{obj.idOportunidad} para la integración
+	
+	form(style=`background: #fff;padding: 25px; border-radius: 6px;width: 500px;border: 2px solid  ${obj.color};`)
+		div(style="width:35%;display:inline-block;font-weight:bold;vertical-align: top; padding-bottom: 9px;text-align: initial;") Oportunidad
+		div(style="width:35%;display:inline-block")
+			span(style="display:block;font-size: 12px;text-align: initial;text-transform: uppercase;")= obj.idOportunidad
+		div(style="width:35%;display:inline-block;font-weight:bold;vertitext-transform: uppercase;cal-align: top; padding-bottom: 9px;text-align: initial") Fecha Registro
+		div(style="width:35%;display:inline-block")
+			span(style="display:block;font-size: 12px;text-align: initial;text-transform: uppercase;")= obj.fechaRegistroCompleta
+		div(style="width:35%;display:inline-block;font-weight:bold;vertitext-transform: uppercase;cal-align: top; padding-bottom: 9px;text-align: initial") Vendedor
+		div(style="width:35%;display:inline-block")
+			span(style="display:block;font-size: 12px;text-align: initial;text-transform: uppercase;")= `${obj.codigoVendedor}  ${obj.nombreVendedor}`
+		div(style="width:35%;display:inline-block;font-weight:bold;vertitext-transform: uppercase;cal-align: top; padding-bottom: 9px;text-align: initial") RUC / DNI
+		div(style="width:35%;display:inline-block")
+			span(style="display:block;font-size: 12px;text-align: initial;text-transform: uppercase;")= obj.documento
+		div(style="width:35%;display:inline-block;font-weight:bold;vertitext-transform: uppercase;cal-align: top; padding-bottom: 9px;text-align: initial") Cliente
+		div(style="width:35%;display:inline-block")
+			span(style="display:block;font-size: 12px;text-align: initial;text-transform: uppercase;")= obj.nombreCliente
+		div(style="width:35%;display:inline-block;font-weight:bold;vertitext-transform: uppercase;cal-align: top; padding-bottom: 9px;text-align: initial") Direccion
+		div(style="width:35%;display:inline-block")
+			span(style="display:block;font-size: 12px;text-align: initial;text-transform: uppercase;")= obj.direccion
+		div(style="width:35%;display:inline-block;font-weight:bold;vertitext-transform: uppercase;cal-align: top; padding-bottom: 9px;text-align: initial") Condicion Domicilio
+		div(style="width:35%;display:inline-block")
+			span(style=`display:block;font-size: 12px;text-align: initial;text-transform: uppercase;font-weight: bold;color: ${obj.color}`)= obj.condicionDeDomicilio
+		div(style="width:35%;display:inline-block;font-weight:bold;vertitext-transform: uppercase;cal-align: top; padding-bottom: 9px;text-align: initial") Estado Contribuyente
+		div(style="width:35%;display:inline-block")
+			span(style=`display:block;font-size: 12px;text-align: initial;text-transform: uppercase;font-weight: bold;color: ${obj.color}`)= obj.estadoContribuyente
+		if obj.clientesEnElSiv.length > 0
+			div(style=`font-weight: 700;text-transform: uppercase;color: ${obj.color};padding: 12px;padding-bottom: 0px;`) Clientes coincidentes en el Siv 
+			div(style="width:100%;padding-bottom: 0px;display: flex;padding-top: 10px;")
+				each cliente in obj.clientesEnElSiv
+					div(style=`flex: 1;border: 2px solid #c1c1c1;background-color: #efefef;border-radius: 6px;padding: 11px;margin: 7px;`)
+						span(style=`font-size: 12px;font-weight: bold;color: ${obj.color};`)= cliente.codigoCliente
+						span(style="font-size: 12px;font-weight: bold;margin-left: 20px")= cliente.nombreCliente
+						span(style=`font-size: 12px;display: flow-root;padding-top: 5px;`) No tiene vendedor asignado

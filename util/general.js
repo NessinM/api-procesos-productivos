@@ -27,16 +27,16 @@ var notifySlack = function (empresa, err, adicional, adicional2, callback) {
 	};
 
 	// #datacont-movil
-	var url = 'https://hooks.slack.com/services/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';
-	obj.username = programa;
+	// var url = 'https://hooks.slack.com/services/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';
+	// obj.username = programa;
 	
-	request.post(url, {form: JSON.stringify(obj)}, function(err, response, body) {
-		if (err) {
-			console.error('Error al enviar el request a slack:', err.message);
-		}
-		console.log('Resultado del envío a Slack:', body);
-	  if(callback) callback();
-	});
+	// request.post(url, {form: JSON.stringify(obj)}, function(err, response, body) {
+	// 	if (err) {
+	// 		console.error('Error al enviar el request a slack:', err.message);
+	// 	}
+	// 	console.log('Resultado del envío a Slack:', body);
+	//   if(callback) callback();
+	// });
 };
 
 var infoLog = function(empresa, obj, tipo) {
